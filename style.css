@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { 
+    background-color: #0c0c0c; 
+    color: #eee; 
+    font-family: 'Inter', sans-serif; 
+    line-height: 1.6;
+}
+
+/* Header & Nav */
+header {
+    background: #000;
+    padding: 15px 5%;
+    border-bottom: 1px solid #1a1a1a;
+    position: sticky;
+    top: 0; z-index: 1000;
+}
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+.logo h1 { font-size: 1.2rem; letter-spacing: 1px; color: #fff; text-transform: uppercase; }
+.logo p { font-size: 0.7rem; color: #888; }
+
+nav ul { display: flex; list-style: none; gap: 30px; }
+nav ul li a { text-decoration: none; color: #777; font-weight: 600; font-size: 0.9rem; transition: 0.3s; }
+nav ul li a.active, nav ul li a:hover { color: #00a2ff; }
+
+/* Home Gallery Styles */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 5px;
+    padding: 5px;
+}
+.project-card { position: relative; overflow: hidden; aspect-ratio: 16/9; background: #111; cursor: pointer; }
+.project-card img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; filter: brightness(0.8); }
+.project-card:hover img { transform: scale(1.05); filter: brightness(1.1); }
+.overlay { 
+    position: absolute; bottom: 0; left: 0; width: 100%; 
+    padding: 20px; background: linear-gradient(transparent, rgba(0,0,0,0.8)); 
+    opacity: 0; transition: 0.3s;
+}
+.project-card:hover .overlay { opacity: 1; }
+.overlay span { font-size: 0.9rem; font-weight: 600; letter-spacing: 1px; }
+
+/* Resume Styles */
+.resume-wrapper { max-width: 850px; margin: 0 auto; padding: 60px 20px; animation: fadeIn 0.4s ease; }
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.resume-header { text-align: center; margin-bottom: 50px; }
+.res-profile-img { 
+    width: 120px; height: 120px; border-radius: 50%; 
+    object-fit: cover; object-position: 65% center; 
+    transform: scale(1.2); border: 2px solid #222; margin-bottom: 15px;
+}
+.res-location { color: #666; font-size: 0.85rem; margin-bottom: 15px; }
+.res-socials { display: flex; justify-content: center; gap: 20px; }
+.res-socials a { color: #00a2ff; font-size: 1.2rem; transition: 0.3s; }
+.res-socials a:hover { color: #fff; }
+
+.res-section-title {
+    font-size: 1.3rem; text-transform: uppercase; letter-spacing: 1.5px;
+    color: #fff; border-bottom: 1px solid #222; padding-bottom: 10px;
+    margin: 50px 0 25px;
+}
+.res-text p { color: #aaa; font-size: 0.95rem; margin-bottom: 20px; text-align: justify; }
+.res-text strong { color: #fff; }
+
+.skills-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+.skills-wrap span { 
+    background: #1a1a1a; color: #888; padding: 6px 12px; 
+    border-radius: 3px; font-size: 0.7rem; font-weight: 700; 
+    text-transform: uppercase; border: 1px solid #333; 
+}
+
+.soft-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.soft-box { background: #0f0f0f; padding: 15px; border: 1px solid #222; color: #999; font-size: 0.9rem; display: flex; align-items: center; gap: 12px; }
+.soft-box i { color: #00a2ff; }
+
+.res-interests { color: #666; font-size: 0.85rem; font-style: italic; }
+
+/* Mobile Fixes */
+@media (max-width: 768px) {
+    .portfolio-grid { grid-template-columns: 1fr; }
+    .nav-container { flex-direction: column; gap: 15px; text-align: center; }
+}
+
+/* Filter Bar Styling */
+.filter-container {
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid #1a1a1a;
+    margin-bottom: 5px;
+}
+.filter-menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 25px;
+}
+.filter-item {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    color: #555;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+.filter-item:hover, .filter-item.active {
+    color: #00a2ff; /* Your accent color */
+}
+
+/* Hide cards via JS class */
+.project-card.hide {
+    display: none;
+}
+
+/* Ensure smooth grid transitions */
+.portfolio-grid {
+    transition: opacity 0.3s ease;
+}
+/* Add to your style.css for correct media scaling */
+.project-media {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: block;
+}
+
+/* Inside project-detail.html <style> block */
+.project-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #ffffff; /* This changes Forest Lighting Study to white */
+}
+/* Add to the bottom of style.css */
+.project-title {
+    color: #ffffff !important;
+}
+.project-media {
+    width: 100%;
+    height: auto;
+    display: block; /* Ensures it doesn't have weird inline spacing */
+}
+/* Sticky Social Sidebar */
+.sticky-socials {
+    position: fixed;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 2000;
+}
+
+.social-icon {
+    width: 42px;
+    height: 42px;
+    background: #111;
+    border: 1px solid #222;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-icon:hover {
+    color: #fff;
+    border-color: #00a2ff;
+    transform: scale(1.1) translateX(-5px);
+    box-shadow: 0 0 20px rgba(0, 162, 255, 0.4);
+    background: #00a2ff0d;
+}
+
+/* Ensure icons are visible on mobile without blocking content */
+@media (max-width: 768px) {
+    .sticky-socials {
+        position: relative;
+        top: 0;
+        right: 0;
+        transform: none;
+        flex-direction: row;
+        justify-content: center;
+        margin: 40px 0;
+    }
+}
+/* Project Brief Layout */
+.project-brief {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 25px;
+    padding: 30px 0;
+    margin-bottom: 40px;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+}
+
+.brief-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Category Label (e.g., ROLE) */
+.brief-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: #00a2ff; /* Matches your accent color */
+}
+
+/* Specific Value (e.g., Lead Lighting Artist) */
+.brief-value {
+    font-size: 1rem;
+    color: #eee;
+    font-weight: 400;
+}
+
+/* Mobile Adjustment */
+@media (max-width: 768px) {
+    .project-brief {
+        grid-template-columns: 1fr 1fr; /* 2 columns on mobile */
+        gap: 20px;
+        padding: 20px 0;
+    }
+}
+/* Container to make videos responsive */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    margin-bottom: 20px;
+}
+
+/* Base container for all videos */
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* Standard 16:9 Aspect Ratio */
+    height: 0;
+    margin-bottom: 30px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+/* Fix for the "Too Long" Vertical Short */
+.video-container.vertical-short {
+    padding-bottom: 0; 
+    height: 600px; /* Limits the vertical height */
+    max-width: 337px; /* Maintains the 9:16 ratio width-wise */
+    margin: 0 auto 40px auto; /* Centers the short */
+}
+
+/* Mobile fix for vertical video */
+@media (max-width: 768px) {
+    .video-container.vertical-short {
+        height: 500px;
+        max-width: 280px;
+    }
+}
+.project-media {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    display: block;
+    margin-top: 10px;
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    margin-bottom: 20px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    margin-bottom: 25px;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.media-stack img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Abhinav Bhalavi</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific Styles for the Project Detail Page */
+        .project-detail-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .project-header {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #222;
+            padding-bottom: 20px;
+        }
+        .project-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .project-subtitle {
+            color: #00a2ff;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        .project-description {
+            color: #aaa;
+            line-height: 1.8;
+            max-width: 800px;
+            margin-bottom: 40px;
+        }
+        .media-stack {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .media-stack img, .media-stack video {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .back-btn {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #555;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .back-btn:hover { color: #fff; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Abhinav Bhalavi</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Back to Portfolio</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="project-detail-container">
+        <a href="index.html" class="back-btn">← Back to Gallery</a>
+        
+        <div class="project-header">
+            <h1 class="project-title">Forest Lighting Study</h1>
+            <p class="project-subtitle">Unreal Engine 5.3 | Lumen | Nanite</p>
+            <div class="project-description">
+                <p>This project focuses on hyper-realistic lighting and atmospheric fog within a dense forest environment. Utilizing <strong>Lumen</strong> for real-time global illumination and <strong>Nanite</strong> for high-fidelity geometry, I aimed to capture the "God Ray" effect during the morning golden hour.</p>
+            </div>
+        </div>
+
+   <div class="media-stack">
+    <div class="video-container">
+        <iframe 
+            src="https://www.youtube.com/embed/popkrZSK5D0" 
+            title="Forest Lighting Study - Part 1" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <div class="video-container">
+        <iframe 
+            src="https://www.youtube.com/embed/popkrZSK5D0" 
+            title="Forest Lighting Study - Part 2" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen>
+        </iframe>
+    </div>
+
+    <img src="images/forest.jpg" alt="Forest Render 1">
+    <img src="images/forest2.jpg" alt="Forest Render 2">
+    <img src="images/forest3.jpg" alt="Forest Render 3">
+</div>
+
+    
+
+    
+
+    </main>
+
+</body>
+</html>

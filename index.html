@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhinav Bhalavi | Principal Environment Artist</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <h1>Abhinav Bhalavi</h1>
+                <p>Principal Lighting Artist | Unreal Engine Specialist</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="javascript:void(0)" id="nav-home" class="active" onclick="showPage('home')">Home</a></li>
+                    <li><a href="javascript:void(0)" id="nav-resume" onclick="showPage('resume')">Resume</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="home-page">
+        <div class="filter-container">
+            <ul class="filter-menu">
+                <li class="filter-item active" onclick="filterProjects('all', this)">ALL</li>
+                <li class="filter-item" onclick="filterProjects('env', this)">ENVIRONMENTS</li>
+                <li class="filter-item" onclick="filterProjects('arch', this)">ARCHVIZ</li>
+                <li class="filter-item" onclick="filterProjects('beach', this)">BEACH</li> 
+            </ul>
+        </div>
+
+       <div class="portfolio-grid" id="portfolio-grid">
+    <div class="project-card env">
+        <a href="project-detail.html">
+            <img src="images/forest.jpg" alt="Forest Environment" loading="lazy">
+            <div class="overlay">
+                <span>FOREST LIGHTING STUDY | UE5</span>
+            </div>
+        </a>
+    </div>
+
+    <div class="project-card beach">
+        <a href="beach-detail.html"> 
+            <img src="images/beach.jpg" alt="Beach Scene" loading="lazy">
+            <div class="overlay">
+                <span>TROPICAL BEACH SUNSET | UE5</span>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+    </main>
+
+    <div class="sticky-socials">
+        <a href="https://www.linkedin.com/in/abhinav-bhalavi-9381922bb/" class="social-icon" target="_blank" title="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://www.instagram.com/tanx_xx.x/" class="social-icon" target="_blank" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.youtube.com/@TANXX_X" class="social-icon" target="_blank" title="YouTube">
+            <i class="fab fa-youtube"></i>
+        </a>
+        <a href="mailto:abhinavbhalavi3@gmail.com" class="social-icon" title="Email Me">
+            <i class="fas fa-envelope"></i>
+        </a>
+    </div>
+
+    <main id="resume-page" style="display: none;">
+        <div class="resume-wrapper">
+            <div class="resume-header">
+    <img src="images/IMG20251224204127.jpg" class="res-profile-img" alt="Abhinav Bhalavi" loading="lazy">
+    <h2>Abhinav Bhalavi</h2>
+    ...
+</div>
+
+            <section class="res-content">
+                <h3 class="res-section-title">Summary</h3>
+                <div class="res-text">
+                    <p>I am a Principal Lighting Artist dedicated to creating immersive, hyper-realistic environments and look development for architecture and high-end gaming. My work is defined by a mastery of visual storytelling, mood creation, and cinematic composition within real-time engines, with a specialized focus on <strong>Unreal Engine 5</strong> and procedural workflows.</p>
+                    <p>I lead the artistic direction of lighting by establishing rigorous style guides, color palettes, and mood boards. I specialize in polishing environments to a cinematic standard while ensuring gameplay readability and player guidance remain paramount. By blending artistic sensitivity with deep technical knowledge, I leverage modern rendering technologies—including <strong>Lumen, Nanite, Volumetric Clouds/Fog, and Dynamic Exposure</strong>—to create atmospheric worlds that are emotionally impactful and technically seamless.</p>
+                    <p><strong>Optimization & Leadership:</strong> I prioritize lighting performance by meticulously managing light complexity and radius overlaps. As a mentor, I focus on pushing the artistic growth of the team, setting quality benchmarks, and ensuring that lighting consistently communicates a cohesive story across all levels.</p>
+                </div>
+
+                <h3 class="res-section-title">Skills</h3>
+                <div class="skills-wrap">
+                    <span>Environment Design</span><span>Rendering</span><span>3D Animation</span>
+                    <span>3D Visualization</span><span>Hard Surface Modeling</span><span>Photography</span>
+                    <span>Architectural Visualization</span><span>PBR Texturing</span><span>Unreal Engine 5.3</span>
+                    <span>Lumen</span><span>Nanite</span><span>Houdini</span><span>VEX/Python</span>
+                </div>
+
+                <h3 class="res-section-title">Software Proficiency</h3>
+                <div class="soft-grid">
+                    <div class="soft-box"><i class="fas fa-cube"></i> Unreal Engine 5.3</div>
+                    <div class="soft-box"><i class="fas fa-project-diagram"></i> Houdini</div>
+                    <div class="soft-box"><i class="fas fa-magic"></i> Substance Painter</div>
+                    <div class="soft-box"><i class="fas fa-video"></i> DaVinci Resolve</div>
+                    <div class="soft-box"><i class="fas fa-mountain"></i> Gaea</div>
+                </div>
+
+                <h3 class="res-section-title">Interests</h3>
+                <p class="res-interests">Music Production & Beat Making • Percussion (Drums) • Cinematic Photography • Game Design Architecture • Ethical Hacking & Cybersecurity</p>
+            </section>
+        </div>
+    </main>
+
+    <script src="filter.js"></script>
+    <script>
+        function showPage(pageId) {
+            const home = document.getElementById('home-page');
+            const resume = document.getElementById('resume-page');
+            const navHome = document.getElementById('nav-home');
+            const navResume = document.getElementById('nav-resume');
+
+            if(pageId === 'home') {
+                home.style.display = 'block';
+                resume.style.display = 'none';
+                navHome.classList.add('active');
+                navResume.classList.remove('active');
+            } else {
+                home.style.display = 'none';
+                resume.style.display = 'block';
+                navHome.classList.remove('active');
+                navResume.classList.add('active');
+            }
+            window.scrollTo(0,0);
+        }
+    </script>
+</body>
+</html>
